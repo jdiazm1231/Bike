@@ -1,0 +1,25 @@
+body{
+
+	font-family: 'Poiret One', cursive;
+	text-align:center;
+	align-content: center;
+	vertical-align: center;
+
+}
+h1{
+	color: #666262;
+	font-size: 40pt;
+
+}
+nav{
+	margin-top:40px; 
+	display: none;
+}
+
+nav a{
+
+	font-size: 25pt;
+	margin-left: 20px;
+}
+
+
