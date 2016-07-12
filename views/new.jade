@@ -1,0 +1,28 @@
+extends ./layout.jade
+block contenido
+	div(class="container") 
+		h1 Agregar Producto
+		form(method="post" action="/product")
+			div(class="form-group")
+				label Nombre :
+				input(type="text",class="form-control" placeholder="Nombre" name="nombre" id="nombre")
+
+			div(class="form-group")
+				label Precio :
+				input(type="number",class="form-control" placeholder="Precio" name="precio" id="precio")
+					
+			div(class="form-group")
+				label Categoria :
+				select(class="form-control" name="categoria" id="categoria" placeholder="Seleccione")
+					option(value="") 
+					option(value="Ruta") Ruta
+					option(value="Montana") Montaña
+					option(value="urbanas") Urbanas
+					option(value="Fixie") Fixie
+					
+			div(class="form-group")
+				label Descripcion :
+				textarea(rows="3" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion")
+			div(class="form-group")
+				button( type="submit" class="btn btn-primary" name="guardar" id="guardar")
+					i(class="fa fa-check")  Guardar

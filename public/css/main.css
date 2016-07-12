@@ -3,12 +3,13 @@ body{
 	font-family: 'Poiret One', cursive;
 	text-align:center;
 	align-content: center;
-	vertical-align: center;
+	vertical-align: top;
 
 }
 h1{
 	color: #666262;
 	font-size: 40pt;
+	margin-bottom: 40px;
 
 }
 nav{
@@ -22,4 +23,17 @@ nav a{
 	margin-left: 20px;
 }
 
+form{
+	
+	margin: 0 auto;
+	height: 100%;
+	width: 30%;
+	text-align: center ;
+	align-content: center;
+}
 
+
+
+.no-float{
+	float:none !important;
+}
