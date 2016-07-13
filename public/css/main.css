@@ -32,7 +32,10 @@ form{
 	align-content: center;
 }
 
+.btn{
 
+	margin:5px;
+}
 
 .no-float{
 	float:none !important;

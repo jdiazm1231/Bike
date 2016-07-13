@@ -1,0 +1,7 @@
+extends ./layout.jade
+block contenido
+	div(class="container") 
+		h1 Lista Productos
+		each product in products
+			h3=product.nombre
+			img(src='../#{product.img}.jpg')

@@ -1,6 +1,7 @@
 var express = require('express'); // importo express framework
 var mongoose = require('mongoose'); // Driver de Mongo DB
 var bodyParser = require('body-parser'); // Nos Parsea eL contenido del Formulario
+var multer = require('multer');
 var app = express(); //asigno express a una variable
 
 mongoose.connect("mongodb://localhost/bike"); //Conexion con la Base De Datos
@@ -12,7 +13,8 @@ var productosSchema = {
 	nombre: String,
 	categoria: String,
 	precio: Number,
-	descripcion: String
+	descripcion: String,
+	img: String
 
 };
 
@@ -25,7 +27,9 @@ app.use(bodyParser.json()); //Necesario de Body-Parser
 app.use(bodyParser.urlencoded({
 	extended: true
 })); //Necesario de Body-Parser
-
+app.use(multer({
+	dest: './uploads'
+}).single('inputFileName'));
 
 app.post("/product", function(require, response) {
 
@@ -35,10 +39,13 @@ app.post("/product", function(require, response) {
 		nombre: require.body.nombre,
 		categoria: require.body.categoria,
 		precio: require.body.precio,
-		descripcion: require.body.descripcion
+		descripcion: require.body.descripcion,
+		img: require.file.path
 	}
 
 	var prd = new ProductModel(data);
+	console.log(require.file);
+
 
 	prd.save(function(err) {
 		console.log(prd);
@@ -55,7 +62,18 @@ app.get("/new", function(require, response) {
 
 });
 
-//ruta para el index Renderizamos vista
+app.get("/product", function(require, response) {
+
+		ProductModel.find(function(err, productos) {
+
+			if(err){
+				console.log(err);
+			}
+			response.render("productos",{products : productos});
+
+		});
+	})
+	//ruta para el index Renderizamos vista
 app.get("/", function(require, response) {
 
 	console.log('corriendo');
