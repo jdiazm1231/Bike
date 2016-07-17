@@ -31,6 +31,21 @@ app.use(multer({
 	dest: './uploads'
 }).single('inputFileName'));
 
+app.get("/admin", function(require, response) {
+
+	ProductModel.find(function(err, productos) {
+
+		if (err) {
+			console.log(err);
+		}
+		response.render("admin", {
+			products: productos
+		});
+
+	});
+});
+
+
 app.post("/product", function(require, response) {
 
 
@@ -66,10 +81,12 @@ app.get("/product", function(require, response) {
 
 		ProductModel.find(function(err, productos) {
 
-			if(err){
+			if (err) {
 				console.log(err);
 			}
-			response.render("productos",{products : productos});
+			response.render("productos", {
+				products: productos
+			});
 
 		});
 	})

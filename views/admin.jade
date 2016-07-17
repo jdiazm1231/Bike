@@ -1,0 +1,32 @@
+extends ./layout.jade
+block contenido
+	h1 Administrar Productos
+	div(class="container")
+		div(class="row table-responsive")
+			table(class="table table-condensed table-hover table-striped table-bordered")
+				thead(class="heading")
+					tr
+						th #
+						th Nombre
+						th Categoria
+						th Precio
+						th Descripcion
+						th Foto
+						th Accion
+				tbody
+					each product in products
+						tr
+							td=product.id
+							td=product.nombre
+							td=product.categoria
+							td=product.precio
+							td=product.descripcion
+							td
+								a(href="#{product.img}" target="_blank") view
+							td
+								a(href="/admin/edit/#{product.id}" class="btn btn-primary")
+									i(class="fa fa-edit")
+								a(href="#" class="btn btn-danger")
+									i(class="fa fa-times")  	
+
+							
