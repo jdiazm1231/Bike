@@ -1,9 +1,8 @@
 extends ./layout.jade
 block contenido
 	h1 Lista Productos
-	div(class="row" id="productos" ) 
-			br
-			each product in products
-				div(class="col-md-2" )
-					h3=product.nombre
-					img(src='#{product.img}', width="250" height="250")
+	div(class="row" id="productos")
+		each product in products
+			div(class="col-md-2" )
+				h3=product.nombre
+				img(src='uploads/#{product.img}', width="250" height="250")
