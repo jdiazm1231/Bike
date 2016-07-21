@@ -13,7 +13,7 @@ h1{
 
 }
 nav{
-	margin-top:40px; 
+	margin-top:40px;
 	display: none;
 }
 
@@ -24,7 +24,7 @@ nav a{
 }
 
 form{
-	
+
 	margin: 0 auto;
 	height: 100%;
 	width: 30%;
@@ -43,6 +43,6 @@ form{
 
 
 #productos{
-	 
+
 	text-align: center;
 }
