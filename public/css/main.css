@@ -4,8 +4,10 @@ body{
 	text-align:center;
 	align-content: center;
 	vertical-align: top;
+	background-color: #F2F1F1;
 
 }
+
 h1{
 	color: #666262;
 	font-size: 40pt;
@@ -45,4 +47,9 @@ form{
 #productos{
 
 	text-align: center;
+}
+
+.container{
+
+	margin-top:20px;
 }

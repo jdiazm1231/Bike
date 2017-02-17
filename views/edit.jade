@@ -1,6 +1,6 @@
-extends ./layout.jade
+extends ./layout2.jade
 block contenido
-	div(class="container") 
+	div(class="container")
 		h1 Editar Producto
 		form(method="POST" enctype="multipart/form-data" action="/admin/#{products.id}?_method=PUT")
 			input(type="hidden"  name="method" value="put")
@@ -11,16 +11,16 @@ block contenido
 			div(class="form-group")
 				label Precio :
 				input(type="number",class="form-control" value="#{products.precio}" placeholder="Precio" name="precio" id="precio")
-					
+
 			div(class="form-group")
 				label Categoria :
 				select(class="form-control"  name="categoria" id="categoria" placeholder="Seleccione")
-					option( selected value="#{products.categoria}") 
+					option( selected value="#{products.categoria}")
 					option(value="Ruta") Ruta
 					option(value="Montana") Montaña
 					option(value="urbanas") Urbanas
 					option(value="Fixie") Fixie
-					
+
 			div(class="form-group")
 				label Descripcion :
 				textarea(rows="3" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion")
@@ -29,8 +29,8 @@ block contenido
 			div(class="form-group")
 				label Imagen :
 				input(type="file" name="inputFileName" class="form-control" )
-			
-					
+
+
 			div(class="form-group")
 				button( type="submit" class="btn btn-primary" name="guardar" id="guardar")
 					i(class="fa fa-check")  Editar

@@ -1,4 +1,4 @@
-extends ./layout.jade
+extends ./layout2.jade
 block contenido
 	h1 Administrar Productos
 	div(class="container")
@@ -27,6 +27,5 @@ block contenido
 								a(href="/admin/edit/#{product.id}" class="btn btn-primary")
 									i(class="fa fa-edit")
 								a(href="/delete/#{product.id}" class="btn btn-danger")
-									i(class="fa fa-times")  	
+									i(class="fa fa-times")
 
-							
